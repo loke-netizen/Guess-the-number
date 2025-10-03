@@ -1,1 +1,47 @@
-# Guess-the-number
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>GUESS THE NUMBER</h1>
+    <input type="number" id="inputNum">
+    <button onclick="guess()">Check</button>
+    <div class="msg"></div>
+    <div class="score"></div>
+    <button onclick="resetGame()">Play Again</button>
+
+
+    <script>
+        var input=document.querySelector("#inputNum");
+        var msg=document.querySelector(".msg")
+        var score=document.querySelector(".score")
+            let res=10 
+            var random=Math.floor(Math.random()*10)+1
+        function guess(){
+            var inputvalue=Number(input.value)
+           
+            console.log(random)
+            if(inputvalue==random){
+                msg.textContent="You are correct!"
+                score.innerText=res;
+            // let reload =document.createAttribute
+              
+            }
+            else{
+                msg.textContent="You are wrong"
+                score.innerText=res-1;
+                res=res-1
+            }
+
+        }
+
+        function resetGame(){
+         location.reload();
+        }
+
+    </script>
+</body>
+</html>
